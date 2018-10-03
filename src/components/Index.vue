@@ -22,6 +22,9 @@
         <a href="https://blog.csdn.net/qq_33215972">
           <BigCircleImage :img-src="require('../assets/csdn.png')" :size="30" :padding="10" background-color="white"/>
         </a>
+        <a href="https://sunnyqjm.github.io/">
+          <BigCircleImage :img-src="require('../assets/hexo.png')" :size="30" :padding="10" background-color="white"/>
+        </a>
       </p>
     </div>
   </div>
