@@ -5,10 +5,10 @@
     <!--</div>-->
     <div id="demo-index-content">
       <BigCircleImage :img-src="require('../assets/logo.png')" :size="120" :padding="30" background-color="white"/>
-      <h1 id="demo-index-name" class="zoomIn">MingJ | 阙建明</h1>
-      <span id="demo-index-description">每一个不曾起舞的日子都是对生命的辜负~</span>
-      <p id="friend-links">
-        <a href="https://github.com/SunnyQjm">
+      <h1 id="demo-index-name" class="animated zoomIn">MingJ | 阙建明</h1>
+      <span id="demo-index-description" class="animated fadeIn" >每一个不曾起舞的日子都是对生命的辜负~</span>
+      <p id="friend-links" class="animated fadeIn">
+        <a href="https://github.com/SunnyQjm" >
           <BigCircleImage :img-src="require('../assets/github.png')" :size="30" :padding="10" background-color="white"/>
         </a>
         <a href="https://blog.qjm253.cn">
@@ -25,6 +25,9 @@
         <a href="https://sunnyqjm.github.io/">
           <BigCircleImage :img-src="require('../assets/hexo.png')" :size="30" :padding="10" background-color="white"/>
         </a>
+        <router-link to="/chat">
+          <BigCircleImage :img-src="require('../assets/chat.png')" :size="30" :padding="10" background-color="white"/>
+        </router-link>
       </p>
     </div>
   </div>
