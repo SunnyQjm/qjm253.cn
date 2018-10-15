@@ -83,6 +83,9 @@ export default {
   #chat-item-message-content {
     padding-top: 5px;
     padding-left: 60px;
+    margin-right: 20px;
     color: white;
+    word-break: break-all;
+    word-wrap: normal;
   }
 </style>
