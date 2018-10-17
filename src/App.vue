@@ -1,9 +1,24 @@
 <template>
   <div id="app">
     <div id="particle-effect">
-      <vue-particles>
+      <vue-particles color="#dedede"
+                     :particleOpacity="0.7"
+                     :particlesNumber="80"
+                     shapeType="circle"
+                     :particleSize="4"
+                     linesColor="#dedede"
+                     :linesWidth="1"
+                     :lineLinked="true"
+                     :lineOpacity="0.4"
+                     :linesDistance="150"
+                     :moveSpeed="3"
+                     :hoverEffect="true"
+                     hoverMode="grab"
+                     :clickEffect="true"
+                     clickMode="push" >
       </vue-particles>
     </div>
+
     <router-view/>
   </div>
 </template>
@@ -26,10 +41,9 @@ export default {
   }
   #particle-effect{
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #272727;
   }
 </style>

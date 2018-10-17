@@ -8,7 +8,6 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'animate.css'
 
 import VueParticles from 'vue-particles'
-// import iView from 'iview'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -19,5 +18,11 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  mounted: function () {
+    try {
+      document.body.removeChild(document.getElementById('appLoading'))
+    } catch (e) {
+    }
+  }
 })
