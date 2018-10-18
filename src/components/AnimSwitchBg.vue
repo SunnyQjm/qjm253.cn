@@ -1,21 +1,29 @@
 <template>
-  <transition name="custom-classes-transition"
-              enter-active-class="animated fadeInLeft"
-              leave-active-class="animated fadeOutRight"
-              mode="out-in">
-    <img class="anim-switch-bg-body" :src="imgs[currentImgIndex]" :key="currentImgIndex"/>
-  </transition>
+    <img class="anim-switch-bg-body animated fadeIn" :src="imgs[currentImgIndex]" :key='currentImgIndex'/>
 </template>
 
 <script>
 export default {
   name: 'AnimSwitchBg',
-  data () {
-    return {
-      imgs: ['https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/03/ChMkJ1bKxmyIKUHDAATEC3RxgxAAALHlAEV3FUABMQj318.jpg',
-        'http://img1.3lian.com/2015/w7/90/d/3.jpg'],
-      currentImgIndex: 0
+  props: {
+    currentImgIndex: {
+      type: Number,
+      default: 0
+    },
+    imgs: {
+      type: Array,
+      default: function () {
+        return ['https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/03/ChMkJ1bKxmyIKUHDAATEC3RxgxAAALHlAEV3FUABMQj318.jpg',
+          'http://img1.3lian.com/2015/w7/90/d/3.jpg'
+        ]
+      }
+    },
+    changeTime: {
+      type: Number,
+      default: 5000
     }
+  },
+  data () {
   },
   computed: {},
   methods: {
@@ -26,7 +34,7 @@ export default {
   mounted: function () {
     setInterval(() => {
       this.nextBg()
-    }, 5000)
+    }, this.changeTime)
   }
 }
 </script>
@@ -36,8 +44,8 @@ export default {
     width: 100%;
     height: 100vh;
   }
-
   img {
     height: 100vh;
+    object-fit: cover;
   }
 </style>

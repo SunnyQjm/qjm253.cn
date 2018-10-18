@@ -1,8 +1,8 @@
 <template>
   <div id="demo-index">
-    <!--<div id="bg">-->
-    <!--<AnimSwitchBg></AnimSwitchBg>-->
-    <!--</div>-->
+    <div id="bg">
+    <AnimSwitchBg :imgs="imgs"></AnimSwitchBg>
+    </div>
     <div id="demo-index-content">
       <BigCircleImage :img-src="require('../assets/logo.png')" :size="120" :padding="30" background-color="white"/>
       <h1 id="demo-index-name" class="animated zoomIn">MingJ | 阙建明</h1>
@@ -45,6 +45,14 @@ export default {
     AnimSwitchBg,
     vueCanvasNest
   },
+  data: function () {
+    return {
+      imgs: [
+        require('../assets/starry_sky_01.jpg'),
+        require('../assets/starry_sky_02.jpg')
+      ]
+    }
+  },
   mounted: function () {
   }
 }
@@ -63,18 +71,24 @@ export default {
   #bg {
     position: fixed;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.8;
     width: 100%;
-    height: 100%;
-    background-color: darkgray;
+    height: 100vh;
   }
 
   #friend-links {
     margin-top: 30px;
   }
 
-  #friend-links a {
+  #friend-links > a {
     margin: 10px;
+    height: min-content;
+    width: min-content;
+  }
+
+  #friend-links > a > *:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 .1em white, 0 0 .3em white;
   }
 
   #demo-index-content {
